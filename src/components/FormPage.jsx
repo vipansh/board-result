@@ -73,11 +73,11 @@ export const FormPage = () => {
   }
 
   return (
-    <div className="p-4">
+    <div className="p-8">
       <div class="mt-8 flex ">
         <div class="uppercase w-1/2 text-sm text-gray-600 font-bold">9Th result(weightage 10%) </div>
         <input
-          class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          class="w-full bg-gray-300 text-gray-900 mt-2 p-3  mx-2 rounded-lg focus:outline-none focus:shadow-outline"
           type="number"
           name="nine"
           value={result.name}
@@ -92,7 +92,7 @@ export const FormPage = () => {
           10th First Term 9Th result(weightage 15%)
         </div>
         <input
-          class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          class="w-full bg-gray-300 text-gray-900 mt-2 p-3 mx-2 rounded-lg focus:outline-none focus:shadow-outline"
           type="number"
           name="firstTerm"
           value={result.firstTerm}
@@ -107,7 +107,7 @@ export const FormPage = () => {
           10Th second term 9Th result(weightage 15%)
         </div>
         <input
-          class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          class="w-full bg-gray-300 text-gray-900 mt-2 p-3 mx-2 rounded-lg focus:outline-none focus:shadow-outline"
           type="number"
           name="secondTerm"
           value={result.secondTerm}
@@ -120,7 +120,7 @@ export const FormPage = () => {
       <div class="mt-8 flex">
         <div class="uppercase w-1/2 text-sm text-gray-600 font-bold">pre Board 9Th result(weightage 40%)</div>
         <input
-          class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          class="w-full bg-gray-300 text-gray-900 mt-2 p-3 mx-2 rounded-lg focus:outline-none focus:shadow-outline"
           type="number"
           name="preBoard"
           value={result.preBoard}
@@ -133,7 +133,7 @@ export const FormPage = () => {
       <div class="mt-8 flex">
         <div class="uppercase w-1/2 text-sm text-gray-600 font-bold">Hindi exam 9Th result(weightage 5%)</div>
         <input
-          class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          class="w-full bg-gray-300 text-gray-900 mt-2 p-3 mx-2 rounded-lg focus:outline-none focus:shadow-outline"
           type="number"
           name="hindi"
           value={result.hindi}
