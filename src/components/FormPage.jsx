@@ -73,8 +73,8 @@ export const FormPage = () => {
   }
 
   return (
-    <div>
-      <div class="mt-8 flex">
+    <div className="p-4">
+      <div class="mt-8 flex ">
         <div class="uppercase w-1/2 text-sm text-gray-600 font-bold">9Th result(weightage 10%) </div>
         <input
           class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
