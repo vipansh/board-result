@@ -27,7 +27,6 @@ export const FormPage = () => {
   }
 
   function giveResult() {
-    console.log(xpercentofy(10,percentageof(result.nine, 700)));
     let ninthMarks = Math.ceil(xpercentofy(10, percentageof(result.nine, 700)));
 
     if(percentageof(result.nine, 700)<33){
@@ -80,7 +79,7 @@ export const FormPage = () => {
           class="w-full bg-gray-300 text-gray-900 mt-2 p-3  mx-2 rounded-lg focus:outline-none focus:shadow-outline"
           type="number"
           name="nine"
-          value={result.name}
+          value={result.nine}
           onChange={(e) => {
             changeValue(e);
           }}
@@ -145,7 +144,7 @@ export const FormPage = () => {
 
       <button className="m-4 p-4 border rounded-md" onClick={giveResult}>Calculate</button>
       <button className="m-4 p-4 border rounded-md" onClick={()=>{
-          setFinalResult(tamplet)
+          setFinalResult()
           setResult(tamplet)
       }}>Reset</button>
 
