@@ -83,9 +83,9 @@ export const FormPage = () => {
   }
 
   return (
-    <div className="p-8">
+    <div className="p-4">
       <div className="mt-8 flex ">
-        <div className="uppercase w-1/2 text-sm text-gray-600 font-bold">
+        <div className="max-w-1/2 mx-1 text-gray-600 font-bold">
           9Th result(weightage 10%){" "}
         </div>
         <input
@@ -100,7 +100,7 @@ export const FormPage = () => {
       </div>
 
       <div className="mt-8 flex">
-        <div className="uppercase w-1/2 text-sm text-gray-600 font-bold">
+        <div className="max-w-1/2 mx-1 text-gray-600 font-bold">
           10th First Term result(weightage 15%)
         </div>
         <input
@@ -115,7 +115,7 @@ export const FormPage = () => {
       </div>
 
       <div className="mt-8 flex">
-        <div className="uppercase w-1/2 text-sm text-gray-600 font-bold">
+        <div className="max-w-1/2 mx-1 text-gray-600 font-bold">
           10Th second term result(weightage 15%)
         </div>
         <input
@@ -130,7 +130,7 @@ export const FormPage = () => {
       </div>
 
       <div className="mt-8 flex">
-        <div className="uppercase w-1/2 text-sm text-gray-600 font-bold">
+        <div className="max-w-1/2 mx-1 text-gray-600 font-bold">
           pre Board 10Th result(weightage 40%)
         </div>
         <input
@@ -145,7 +145,7 @@ export const FormPage = () => {
       </div>
 
       <div className="mt-8 flex">
-        <div className="uppercase w-1/2 text-sm text-gray-600 font-bold">
+        <div className="max-w-1/2 mx-1 text-gray-600 font-bold">
           Hindi exam 10Th result(weightage 5%)
         </div>
         <input
