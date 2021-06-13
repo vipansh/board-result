@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 export const FormPage = () => {
   const tamplet = {
@@ -11,6 +11,13 @@ export const FormPage = () => {
   const [result, setResult] = useState(tamplet);
   const [finalResult, setFinalResult] = useState();
   const [totalMarks, setTotalMarks] = useState(0);
+
+  const myRef = useRef(null);
+  const scrollToRef = (scroll) => {
+    if (scroll) {
+      window.scrollTo(0, scroll);
+    }
+  };
 
   function changeValue(e) {
     let value = e.target.value;
@@ -60,16 +67,19 @@ export const FormPage = () => {
     }
 
     setFinalResult({
-      nine: ninthMarks,
-      firstTerm: firstTermMarks,
-      secondTerm: secondTermMarks,
-      preBoard: preBoardMarks,
-      hindi: hindiMarks,
+      nine: parseFloat(ninthMarks).toFixed(2),
+      firstTerm: parseFloat(firstTermMarks).toFixed(2),
+      secondTerm: parseFloat(secondTermMarks).toFixed(2),
+      preBoard: parseFloat(preBoardMarks).toFixed(2),
+      hindi: parseFloat(hindiMarks).toFixed(2),
     });
 
     setTotalMarks(
       ninthMarks + firstTermMarks + secondTermMarks + preBoardMarks + hindiMarks
     );
+    setTimeout(() => {
+      scrollToRef(myRef.current.offsetTop);
+    }, 0);
   }
 
   return (
@@ -91,7 +101,7 @@ export const FormPage = () => {
 
       <div className="mt-8 flex">
         <div className="uppercase w-1/2 text-sm text-gray-600 font-bold">
-          10th First Term  result(weightage 15%)
+          10th First Term result(weightage 15%)
         </div>
         <input
           className="w-full bg-gray-300 text-gray-900 mt-2 p-3 mx-2 rounded-lg focus:outline-none focus:shadow-outline"
@@ -106,7 +116,7 @@ export const FormPage = () => {
 
       <div className="mt-8 flex">
         <div className="uppercase w-1/2 text-sm text-gray-600 font-bold">
-          10Th second term  result(weightage 15%)
+          10Th second term result(weightage 15%)
         </div>
         <input
           className="w-full bg-gray-300 text-gray-900 mt-2 p-3 mx-2 rounded-lg focus:outline-none focus:shadow-outline"
@@ -148,29 +158,65 @@ export const FormPage = () => {
           }}
         />
       </div>
+      <div className="flex">
+        <button
+          className="m-4 p-4 border rounded-md flex mx-auto text-white bg-indigo-500  py-2 px-8 focus:outline-none hover:bg-indigo-600  text-lg"
+          onClick={giveResult}
+          href="#result"
+        >
+          Calculate
+        </button>
+        <button
+          className="m-4 p-4 border rounded-md flex mx-auto text-white bg-indigo-500  py-2 px-8 focus:outline-none hover:bg-indigo-600  text-lg"
+          onClick={() => {
+            setFinalResult();
+            setResult(tamplet);
+          }}
+        >
+          Reset
+        </button>
+      </div>
 
-      <button className="m-4 p-4 border rounded-md" onClick={giveResult}>
-        Calculate
-      </button>
-      <button
-        className="m-4 p-4 border rounded-md"
-        onClick={() => {
-          setFinalResult();
-          setResult(tamplet);
-        }}
-      >
-        Reset
-      </button>
-
-      <div>Result</div>
       {finalResult && (
-        <div>
-          <div> ninth: {finalResult.nine}</div>
-          <div> first Term: {finalResult.firstTerm}</div>
-          <div> second Term: {finalResult.secondTerm}</div>
-          <div> pre Board: {finalResult.preBoard}</div>
-          <div> hindi: {finalResult.hindi}</div>
-          <div>Total: {Math.ceil(totalMarks)}</div>
+        <div className="flex flex-col justify-start">
+          <div className=" flex  justify-center sm:text-3xl text-2xl font-medium title-font text-gray-900  py-2 my-2 border-b-4 rounded-2xl border-gray-300">
+            Result
+            
+          </div>
+          <div
+            ref={myRef}
+            className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2 text-gray-700"
+          >
+            <div className="flex items-center border rounded shadow bg-white p-2 m-2 border-t-4 border-green-500">
+              {" "}
+              Ninth:{" "}
+              <span className="font-bold mx-2"> {finalResult.nine} </span>
+            </div>
+            <div className="flex items-center border rounded shadow bg-white p-2 m-2 border-t-4 border-green-500">
+              {" "}
+              10th First Term:{" "}
+              <span className="font-bold mx-2"> {finalResult.firstTerm}</span>
+            </div>
+            <div className="flex items-center border rounded shadow bg-white p-2 m-2 border-t-4 border-green-500">
+              {" "}
+              10th Second Term:{" "}
+              <span className="font-bold mx-2"> {finalResult.secondTerm}</span>
+            </div>
+            <div className="flex items-center border rounded shadow bg-white p-2 m-2 border-t-4 border-green-500">
+              {" "}
+              10th pre Board:{" "}
+              <span className="font-bold mx-2"> {finalResult.preBoard}</span>
+            </div>
+            <div className="flex items-center border rounded shadow bg-white p-2 m-2 border-t-4 border-green-500">
+              {" "}
+              10th Hindi:{" "}
+              <span className="font-bold mx-2"> {finalResult.hindi}</span>
+            </div>
+          </div>
+          <div className="flex text-xl  rounded shadow bg-white p-2 my-2  border-2 border-t-4 border-green-600 font-semibold text-gray-800">
+            Total:
+            <span className="font-bold mx-2"> {Math.ceil(totalMarks)}</span>
+          </div>
         </div>
       )}
     </div>
