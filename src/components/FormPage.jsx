@@ -27,24 +27,24 @@ export const FormPage = () => {
   }
 
   function giveResult() {
-    console.log(result);
+    console.log(xpercentofy(10,percentageof(result.nine, 700)));
     let ninthMarks = Math.ceil(xpercentofy(10, percentageof(result.nine, 700)));
 
-    if(ninthMarks<33){
+    if(percentageof(result.nine, 700)<33){
         ninthMarks = xpercentofy(10,33)
     }
 
     let firstTermMarks = Math.ceil(
       xpercentofy(15, percentageof(result.firstTerm, 50))
     );
-    if(firstTermMarks<33){
+    if(percentageof(result.firstTermMarks, 50)<33){
         firstTermMarks=(xpercentofy(15,33))
     }
     let secondTermMarks = Math.ceil(
       xpercentofy(15, percentageof(result.secondTerm, 85))
     );
 
-    if(secondTermMarks<33){
+    if(percentageof(result.secondTerm, 85)<33){
         secondTermMarks=(xpercentofy(15,33))
     }
 
@@ -52,11 +52,11 @@ export const FormPage = () => {
       xpercentofy(40, percentageof(result.preBoard, 85))
     );
 
-    if(preBoardMarks<33){
+    if(percentageof(result.preBoard, 85)<33){
         preBoardMarks=(xpercentofy(40,33))
     }
     let hindiMarks = Math.ceil(xpercentofy(5, percentageof(result.hindi, 85)));
-    if(hindiMarks<33){
+    if(percentageof(result.hindi, 85)<33){
         hindiMarks=(xpercentofy(5,33))
     }
 
